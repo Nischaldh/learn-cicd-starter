@@ -66,7 +66,7 @@ func TestGetAPIKeyt(t *testing.T) {
 				t.Errorf("GetAPIKey() auth = %q, want %q", gotAuth, tc.want.auth)
 			}
 
-			if gotErr != nil && tc.want.err != nil {
+			if gotErr == nil && tc.want.err != nil {
 				t.Errorf("expected error %v, got nil", tc.want.err)
 			} else if gotErr != nil && tc.want.err == nil {
 				t.Errorf("expected nil error, got %v", gotErr)
